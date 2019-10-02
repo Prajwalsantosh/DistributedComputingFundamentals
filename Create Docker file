@@ -1,0 +1,8 @@
+FROM nginx:alpine
+COPY ./usr/share/nginx/html
+
+
+MAINTAINER Prajwal Santosh <prajwalsantosh@gmail.com>
+
+CMD["echo","Hello world, first docker image"]
+
