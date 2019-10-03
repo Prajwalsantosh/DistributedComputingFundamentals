@@ -1,0 +1,21 @@
+ kubectl create -f nginx_pod.yaml
+ kubectl get pods
+ 
+NAME          READY     REASON    RESTARTS   
+nginx-karne   1/1       Running   0          
+nginx-mo5ug   1/1       Running   0    
+
+#using kubectl------nginx--
+kubectl create -f nginx_service.yaml
+services/nginxservice
+
+
+
+#orginally had an error
+#sudo -i
+#swapoff -a
+#exit
+#strace -eopenat kubectl version
+
+#the last four statements solved the problem
+
