@@ -1,0 +1,25 @@
+#after launching terminal
+minikube start
+minikube dashboard
+#kubectl create
+kubectl create deployment hello-node --image=gcr.io/hello-minikube-zero-install/hello-node
+kubectl get deployments
+#output-
+NAME         DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   
+hello-node   1         1         1            1         
+kubectl get pods
+
+NAME                          READY     STATUS   
+hello-node-5f76cf6ccf-br9b5   1/1       Running   
+#cluster events
+kubectl get events
+kubectl config view
+
+kubectl expose deployment hello-node --type=LoadBalancer --port=8080
+kubectl get services
+
+NAME         TYPE           CLUSTER-IP      EXTERNAL-IP   
+hello-node   LoadBalancer   10.108.144.78   <pending>    
+kubernetes   ClusterIP      10.96.0.1       <none>       
+
+minikube service hello-node
